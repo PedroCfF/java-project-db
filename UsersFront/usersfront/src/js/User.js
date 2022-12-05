@@ -4,7 +4,7 @@ export default function User(props) {
   return (
     
     <div className='bg-primary'>
-        <p>a</p>
+        <p>{props.user}</p>
     </div>
   )
 }

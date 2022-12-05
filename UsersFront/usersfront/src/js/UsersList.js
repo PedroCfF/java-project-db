@@ -19,13 +19,11 @@ export default function UsersList() {
     })  
   }, []);
 
-  console.log(users[1].name)
-
   return (
     <>
     <div>
-        {users.map((user) => (
-            <User user={user}></User>
+        {users.map(({id, user}) => (
+            <User key={id} user={user}></User>
         ))}
     </div>
     </>
