@@ -8,12 +8,15 @@ export default function PostButton() {
     <>
       <div
         style={{
-          position: "absolute",
+          position: "fixed",
           top: "90%",
-          left: "90%",
+          left: "95%",
         }}
       >
-        <button className="btn btn-primary" onClick={() => setModalShow(true)}>
+        <button
+          className="btn btn-primary MyButton"
+          onClick={() => setModalShow(true)}
+        >
           <strong>+</strong>
         </button>
       </div>

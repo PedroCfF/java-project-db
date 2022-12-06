@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function MyVerticallyCenteredModal(props) {
   const API_URL = "http://localhost:8080/users";
+  const [users, setUsers] = useState([]);
 
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -12,12 +13,7 @@ export default function MyVerticallyCenteredModal(props) {
   const [email, setEmail] = useState("");
 
   let handleSubmit = async (e) => {
-    // e.preventDefault();
-
-    console.log(name);
-    console.log(username);
-    console.log(password);
-    console.log(email);
+    //e.preventDefault();
 
     const res = await fetch(API_URL, {
       method: "POST",
@@ -35,12 +31,7 @@ export default function MyVerticallyCenteredModal(props) {
       }),
     });
 
-    let resJson = await res.json();
-
-    // setName("");
-    // setUsername("");
-    // setPassword("");
-    // setEmail("");
+    //let resJson = await res.json();
   };
 
   return (
@@ -57,35 +48,47 @@ export default function MyVerticallyCenteredModal(props) {
       </Modal.Header>
 
       <Modal.Body>
-        <form onSubmit={handleSubmit}>
-          <div className="d-flex flex-column gap-2">
-            <input
-              type="text"
-              value={name}
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="name"
               placeholder="Name"
               onChange={(e) => setName(e.target.value)}
             />
-            <input
-              type="text"
-              value={username}
-              placeholder="Username"
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicUsername">
+            <Form.Label>UserName</Form.Label>
+            <Form.Control
+              type="name"
+              placeholder="UserName"
               onChange={(e) => setUsername(e.target.value)}
             />
-            <input
-              type="text"
-              value={password}
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <input
-              type="text"
-              value={email}
-              placeholder="Email"
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button type="submit">Create</button>
-          </div>
-        </form>
+          </Form.Group>
+
+          <Button variant="primary" type="submit" className="float-end">
+            Submit
+          </Button>
+        </Form>
       </Modal.Body>
     </Modal>
   );

@@ -21,7 +21,7 @@ export default function UsersList() {
 
   return (
     <>
-      <div className="bg-light border my-2 rounded">
+      <div className="bg-light border my-2 mt-2 rounded">
         <h3 className="p-2">User registry Spring Boot + MySQL</h3>
       </div>
       <Table striped bordered hover size="sm">

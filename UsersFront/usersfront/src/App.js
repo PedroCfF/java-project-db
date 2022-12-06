@@ -6,7 +6,7 @@ import PostButton from "./js/PostButton";
 function App() {
   return (
     <div className="App">
-      <div className="container">
+      <div className="container pt-1">
         <UsersList />
         <PostButton />
       </div>
