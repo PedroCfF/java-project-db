@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
 
 export default function User(props) {
   return (
-    
-    <div className='bg-primary'>
-        <p>{props.user}</p>
-    </div>
-  )
+    <tr>
+      <td>{props.index}</td>
+      <td>{props.name}</td>
+      <td>{props.username}</td>
+      <td>{props.email}</td>
+    </tr>
+  );
 }
